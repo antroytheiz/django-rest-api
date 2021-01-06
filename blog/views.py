@@ -6,12 +6,22 @@ from django.http import HttpResponse
 def index(request):
     context = {
         'judul':'Blog',
+        'nav': [
+            ['/','Home'],
+            ['/blog','Blog'],
+            ['/blog/populer','Populer'],
+            ['/about','About'],
+        ]
     }
     return render(request,'blog/index.html', context)
 
 def populer(request):
     context = {
-        'judul':'Populer'
+        'judul':'Populer',
+        'nav': [
+            ['/blog','Blog'],
+            ['/blog/populer','Populer'],
+        ]
     }
     return render(request,'blog/index.html', context)
 

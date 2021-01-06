@@ -8,15 +8,11 @@
 <body>
     <h1>Ini adalah halaman Templates {{ judul }}</h1>
     <ul>
-        <li>
-            <a href="/" rel="noopener noreferrer">Home</a>
-        </li>
-        <li>
-            <a href="/blog" rel="noopener noreferrer">Blog</a>
-        </li>
-        <li>
-            <a href="/about" rel="noopener noreferrer">About</a>
-        </li>
+        {% for link,nama in nav %}
+            <li>
+                <a href="{{ link }}">{{ nama }}</a>
+            </li>
+        {% endfor %}
     </ul>
 </body>
 </html>
